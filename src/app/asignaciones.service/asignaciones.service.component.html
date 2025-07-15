@@ -1,0 +1,11 @@
+<section>
+  <h3>Asignaciones realizadas</h3>
+  <table>
+    <tr *ngFor="let asg of asignaciones">
+      <td>{{ asg.id_solicitud }}</td>
+      <td>{{ asg.fecha_asignacion | date:'short' }}</td>
+      <td>
+        <button (click)="addAsignCal(asg)">📅 Calendar</button></td>
+    </tr>
+  </table>
+</section>

@@ -1,0 +1,29 @@
+<!-- src/app/dashboard/tutor/tutor.component.html -->
+<h2>🧑‍🏫 Mis sesiones asignadas</h2>
+
+<ng-container *ngIf="sesiones.length; else noSesiones">
+  <table class="w-full border">
+    <thead>
+      <tr>
+        <th>Fecha</th><th>Duración</th><th>Modalidad</th><th>Estado</th><th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of sesiones">
+        <td>{{ s.fecha_sesion | date:'short' }}</td>
+        <td>{{ s.duracion }} min</td>
+        <td>{{ s.modalidad }}</td>
+        <td>{{ s.estado }}</td>
+        <td><button (click)="addSesionCal(s)">📅 Agendar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+
+<ng-template #noSesiones>
+  <p>No tienes sesiones asignadas aún.</p>
+</ng-template>
+
+
+
+

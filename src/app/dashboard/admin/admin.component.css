@@ -1,0 +1,68 @@
+.admin-sesion-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  background: linear-gradient(to right, #141e30, #243b55);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+}
+
+.titulo-sesion {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.form-sesion {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-sesion label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.form-sesion input,
+.form-sesion select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.form-sesion input:focus,
+.form-sesion select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+  outline: none;
+}
+
+.form-sesion button {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 12px;
+  background-color: #38d39f;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-sesion button:hover {
+  background-color: #2ab67d;
+}

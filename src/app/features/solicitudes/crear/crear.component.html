@@ -1,0 +1,57 @@
+<!-- src/app/features/solicitudes/crear/crear.component.html -->
+<h2>Crear Nueva Solicitud</h2>
+
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="id_estudiante">ID Estudiante:</label>
+    <input
+      type="number"
+      id="id_estudiante"
+      name="id_estudiante"
+      [(ngModel)]="model.id_estudiante"
+      #estudiante="ngModel"
+      required
+    />
+    <div *ngIf="estudiante.invalid && estudiante.touched" class="error">
+      Requerido
+    </div>
+  </div>
+
+  <div>
+    <label for="id_materia">ID Materia:</label>
+    <input
+      type="number"
+      id="id_materia"
+      name="id_materia"
+      [(ngModel)]="model.id_materia"
+      #materia="ngModel"
+      required
+    />
+    <div *ngIf="materia.invalid && materia.touched" class="error">
+      Requerido
+    </div>
+  </div>
+
+  <div>
+    <label for="tema">Tema:</label>
+    <input
+      type="text"
+      id="tema"
+      name="tema"
+      [(ngModel)]="model.tema"
+      #temaFld="ngModel"
+      required
+      minlength="3"
+    />
+    <div *ngIf="temaFld.invalid && temaFld.touched" class="error">
+      Debe tener al menos 3 caracteres
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="f.invalid">Guardar</button>
+</form>
+
+<div *ngIf="mensaje" class="success">
+  {{ mensaje }}
+</div>
+

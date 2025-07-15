@@ -1,0 +1,13 @@
+<h2>Lista de Solicitudes</h2>
+
+<ul>
+  <li *ngFor="let solicitud of solicitudes">
+    {{ solicitud.tema }} – {{ solicitud.estado }}
+    <button (click)="onEdit(solicitud.id)">✏️</button>
+    <button (click)="onDelete(solicitud.id)">🗑️</button>
+
+
+  </li>
+</ul>
+
+

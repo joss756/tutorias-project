@@ -1,0 +1,9 @@
+<!-- src/app/features/materias/editar-materia/editar-materia.component.html -->
+<h2>Editar Materia</h2>
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+  <label>Nombre
+    <input name="nombre" [(ngModel)]="model.nombre" required />
+  </label>
+  <button type="submit" [disabled]="f.invalid">Actualizar</button>
+</form>
+<p *ngIf="mensaje">{{ mensaje }}</p>

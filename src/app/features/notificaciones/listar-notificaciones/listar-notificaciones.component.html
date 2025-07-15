@@ -1,0 +1,18 @@
+<!-- src/app/features/notificaciones/listar-notificaciones/listar-notificaciones.component.html -->
+<h2>Notificaciones</h2>
+
+<p *ngIf="error" class="error">{{ error }}</p>
+
+<ul *ngIf="notificaciones.length; else sinNotif">
+  <li *ngFor="let n of notificaciones">
+    <span [class.leida]="n.leida">
+      {{ n.mensaje }} ({{ n.fecha | date:'short' }})
+    </span>
+    <button *ngIf="!n.leida" (click)="marcarLeida(n)">
+      Marcar como leída
+    </button>
+  </li>
+</ul>
+<ng-template #sinNotif>
+  <p>No tienes notificaciones.</p>
+</ng-template>

@@ -1,0 +1,20 @@
+<h2>✏️ Editar Solicitud</h2>
+<form (ngSubmit)="onSubmit()" style="max-width: 400px;">
+  <div>
+    <label for="tema">📝 Tema:</label>
+    <input id="tema" name="tema" [(ngModel)]="solicitud.tema" required />
+  </div>
+
+  <div>
+    <label for="estado">📋 Estado:</label>
+    <select id="estado" name="estado" [(ngModel)]="solicitud.estado" required>
+      <option value="pendiente">Pendiente</option>
+      <option value="asignada">Asignada</option>
+      <option value="cancelada">Cancelada</option>
+      <option value="finalizada">Finalizada</option>
+    </select>
+  </div>
+
+  <button type="submit">💾 Guardar cambios</button>
+</form>
+

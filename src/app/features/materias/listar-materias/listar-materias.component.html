@@ -1,0 +1,9 @@
+<!-- src/app/features/materias/listar-materias/listar-materias.component.html -->
+<h2>Lista de Materias</h2>
+<a routerLink="crear">➕ Nueva Materia</a>
+<ul>
+  <li *ngFor="let m of materias">
+    {{ m.nombre }}
+    <a [routerLink]="['editar', m.id]">✏️</a>
+  </li>
+</ul>

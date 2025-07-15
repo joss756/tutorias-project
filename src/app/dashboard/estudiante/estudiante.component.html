@@ -1,0 +1,16 @@
+<h2>Mis Solicitudes de Tutoría</h2>
+
+<ng-container *ngIf="solicitudes.length; else sinSolicitudes">
+  <ul>
+    <li *ngFor="let solicitud of solicitudes">
+      <strong>{{ solicitud.tema }}</strong> – Estado: {{ solicitud.estado }}
+    </li>
+  </ul>
+</ng-container>
+
+<ng-template #sinSolicitudes>
+  <p>No tienes solicitudes registradas todavía.</p>
+</ng-template>
+
+
+

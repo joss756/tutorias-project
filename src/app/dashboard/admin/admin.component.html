@@ -1,0 +1,23 @@
+<div class="admin-sesion-container">
+  <h3 class="titulo-sesion">Programar sesión</h3>
+
+  <form (ngSubmit)="onCrearSesion(sesionForm)" #f="ngForm" class="form-sesion">
+    <label>Asignación ID:</label>
+    <input type="number" [(ngModel)]="sesionForm.id_asignacion" name="id_asignacion" required />
+
+    <label>Fecha:</label>
+    <input type="datetime-local" [(ngModel)]="sesionForm.fecha_sesion" name="fecha_sesion" required />
+
+    <label>Duración (min):</label>
+    <input type="number" [(ngModel)]="sesionForm.duracion" name="duracion" required />
+
+    <label>Modalidad:</label>
+    <select [(ngModel)]="sesionForm.modalidad" name="modalidad" required>
+      <option value="en linea">En línea</option>
+      <option value="presencial">Presencial</option>
+    </select>
+
+    <button type="submit">Crear sesión</button>
+  </form>
+</div>
+

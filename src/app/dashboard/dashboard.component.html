@@ -1,0 +1,25 @@
+<header class="navbar">
+  <div class="logo">Tutorías</div>
+  <nav>
+    <!-- ADMIN -->
+    <ng-container *ngIf="usuario.rol === 'administrador'">
+      <a routerLink="asignaciones">Administración</a>
+    </ng-container>
+
+    <!-- ESTUDIANTE -->
+    <ng-container *ngIf="usuario.rol === 'estudiante'">
+      <a routerLink="solicitudes">Ver solicitudes</a>
+      <a routerLink="solicitudes/crear">Crear solicitud</a>
+    </ng-container>
+
+    <!-- TUTOR -->
+    <ng-container *ngIf="usuario.rol === 'tutor'">
+      <a routerLink="sesiones">Mis sesiones</a>
+    </ng-container>
+
+    <button (click)="logout()">Cerrar sesión</button>
+  </nav>
+</header>
+
+<hr />
+<router-outlet></router-outlet>

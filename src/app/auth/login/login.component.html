@@ -1,0 +1,21 @@
+<div class="login-page">
+  <h2 class="titulo-login">Iniciar Sesión</h2>
+
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="login-form">
+    <label>
+      Correo
+      <input name="correo" [(ngModel)]="model.correo" required />
+    </label>
+
+    <label>
+      Contraseña
+      <input type="password" name="password" [(ngModel)]="model.password" required minlength="6" />
+    </label>
+
+    <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+  </form>
+
+  <p class="registro-msg">¿No tienes cuenta?
+    <a routerLink="/register">Regístrate aquí</a>
+  </p>
+</div>
