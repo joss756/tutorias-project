@@ -1,14 +1,21 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
 
 export const serverRoutes: ServerRoute[] = [
-  // Ruta dinámica que debe renderizarse solo en el servidor
+  // Excluir TODAS las rutas dinámicas
   {
     path: 'dashboard/materias/editar/:id',
     renderMode: RenderMode.Server
   },
-  // El resto de rutas se pueden prerenderizar
+  {
+    path: 'dashboard/solicitudes/editar/:id',
+    renderMode: RenderMode.Server
+  },
+  // Si tienes más rutas con :id, agrégalas aquí...
+  
+  // El resto de rutas sí se prerenderizan
   {
     path: '**',
     renderMode: RenderMode.Prerender
   }
 ];
+
